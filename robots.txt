@@ -1,0 +1,8 @@
+
+User-agent: *
+
+Allow: /
+
+Disallow: /404.html
+
+Sitemap: https://anish-sir-classes-bhilai.netlify.app/sitemap.xml

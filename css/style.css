@@ -1,0 +1,661 @@
+/* =========================================================
+   ANISH SIR CLASSES
+   Version: 1.0
+   Mobile First
+   ========================================================= */
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeLegibility;
+    line-height: 1.6;
+}
+
+img,
+picture {
+    display: block;
+    max-width: 100%;
+}
+
+ul,
+ol {
+    padding-left: 1.25rem;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+/* =========================================================
+   DESIGN TOKENS
+   ========================================================= */
+
+:root {
+    --color-primary: #0f172a;
+    --color-secondary: #ffffff;
+    --color-accent: #f59e0b;
+
+    --color-text: #1e293b;
+    --color-muted: #64748b;
+
+    --color-border: #e2e8f0;
+    --color-surface: #f8fafc;
+
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    --radius: 12px;
+
+    --container-width: 1200px;
+
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 4rem;
+    --space-2xl: 5rem;
+
+    --transition: 0.2s ease-in-out;
+}
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+body {
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    color: var(--color-text);
+    background: var(--color-secondary);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+section {
+    padding: var(--space-2xl) 0;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+    color: var(--color-primary);
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+}
+
+.skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+    background: var(--color-primary);
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius);
+    z-index: 1000;
+}
+
+/* =========================================================
+   LAYOUT
+   ========================================================= */
+
+.container {
+    width: min(100% - 2rem, var(--container-width));
+    margin-inline: auto;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: white;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 80px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-title {
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.logo-tagline {
+    font-size: 0.875rem;
+    color: var(--color-muted);
+}
+
+.menu-toggle {
+    border: 1px solid var(--color-border);
+    background: white;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.primary-navigation {
+    display: none;
+}
+
+.primary-navigation ul {
+    list-style: none;
+    padding: 0;
+}
+
+.primary-navigation a {
+    display: block;
+    padding: 0.75rem 0;
+}
+
+.primary-navigation.is-open {
+    display: block;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    background: var(--color-surface);
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-label {
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+.hero-description {
+    margin-top: 1rem;
+    font-size: 1.125rem;
+}
+
+.hero-principle {
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding: 0.875rem 1.5rem;
+
+    border-radius: var(--radius);
+
+    font-weight: 600;
+
+    transition: var(--transition);
+}
+
+.button-primary {
+    background: var(--color-primary);
+    color: white;
+}
+
+.button-primary:hover {
+    transform: translateY(-2px);
+}
+
+.button-secondary {
+    background: white;
+    border: 1px solid var(--color-border);
+}
+
+.button-secondary:hover {
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.card-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background: white;
+    border: 1px solid var(--color-border);
+
+    border-radius: var(--radius);
+
+    padding: 1.5rem;
+
+    box-shadow: var(--shadow-sm);
+}
+
+.card ul {
+    margin-top: 1rem;
+}
+
+/* =========================================================
+   FOUNDER
+   ========================================================= */
+
+.founder-content {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.founder img {
+    border-radius: var(--radius);
+}
+
+/* =========================================================
+   BUILD DON'T COPY
+   ========================================================= */
+
+.comparison {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.comparison>div {
+    border: 1px solid var(--color-border);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+}
+
+/* =========================================================
+   STUDENT DEVELOPMENT
+   ========================================================= */
+
+.student-development ul {
+    margin-top: 1.5rem;
+}
+
+.student-development li {
+    margin-bottom: 0.75rem;
+}
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.cta {
+    text-align: center;
+    background: var(--color-surface);
+}
+
+.cta .button {
+    margin-top: 1rem;
+}
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.contact {
+    background: white;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer {
+    background: var(--color-primary);
+    color: white;
+
+    padding: 3rem 0;
+
+    text-align: center;
+}
+
+.site-footer p:last-child {
+    margin-bottom: 0;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (min-width: 768px) {
+
+    .card-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .comparison {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .founder-content {
+        grid-template-columns:
+            300px 1fr;
+        align-items: center;
+    }
+}
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 1024px) {
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .primary-navigation {
+        display: block;
+    }
+
+    .primary-navigation ul {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .primary-navigation a {
+        padding: 0;
+    }
+
+    .card-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* =========================================================
+   UNIVERSAL PAGE COMPONENTS
+   ========================================================= */
+
+.page-header {
+    background: var(--color-surface);
+    text-align: center;
+}
+
+.page-header p {
+    max-width: 700px;
+    margin-inline: auto;
+}
+
+.section {
+    padding: var(--space-2xl) 0;
+}
+
+.section-alt {
+    background: var(--color-surface);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* =========================================================
+   UNIVERSAL GRID
+   ========================================================= */
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+/* =========================================================
+   UNIVERSAL CARD
+   ========================================================= */
+
+.card {
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+/* =========================================================
+   UNIVERSAL BUTTONS
+   ========================================================= */
+
+.button,
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding: 0.875rem 1.5rem;
+
+    border: 0;
+
+    border-radius: var(--radius);
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+    font-weight: 600;
+}
+
+.button-primary,
+.btn {
+    background: var(--color-primary);
+    color: white;
+}
+
+.button-primary:hover,
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.button-secondary {
+    background: white;
+    border: 1px solid var(--color-border);
+}
+
+/* =========================================================
+   UNIVERSAL LISTS
+   ========================================================= */
+
+.feature-list,
+.course-list {
+    padding-left: 1.25rem;
+}
+
+.feature-list li,
+.course-list li {
+    margin-bottom: 0.75rem;
+}
+
+/* =========================================================
+   UNIVERSAL FORM
+   ========================================================= */
+
+.form,
+.contact-form {
+    max-width: 700px;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+
+    padding: 0.875rem;
+
+    border: 1px solid var(--color-border);
+
+    border-radius: var(--radius);
+
+    background: white;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* =========================================================
+   ERROR PAGE
+   ========================================================= */
+
+.error-page {
+    min-height: 70vh;
+
+    display: flex;
+
+    align-items: center;
+}
+
+.error-container {
+    max-width: 700px;
+
+    margin-inline: auto;
+
+    text-align: center;
+}
+
+.error-container h1 {
+    font-size: clamp(4rem, 10vw, 8rem);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (min-width: 768px) {
+
+    .grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+}
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.main-nav a {
+    display: block;
+    padding: 0.75rem 0;
+}
+
+@media (min-width: 1024px) {
+
+    .main-nav ul {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .main-nav a {
+        padding: 0;
+    }
+}
