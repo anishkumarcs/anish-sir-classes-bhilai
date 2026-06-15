@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- SECURITY: STATIC EDUCATIONAL SITE (2026) -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; style-src 'self' 'unsafe-inline'; object-src 'none'; frame-ancestors 'none'">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <title>Anish Sir Classes | Structured Education Pathway</title>
+
+    <style>
+        :root {
+            --bg-main: #f7fbff;
+            --bg-card: #ffffff;
+            --primary: #1e88e5;
+            --secondary: #26a69a;
+            --accent: #ffca28;
+            --text-main: #1f2933;
+            --text-soft: #5f6c7b;
+            --border-soft: #e3e8ef;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, sans-serif;
+            background: linear-gradient(to bottom, #eef6ff, #ffffff);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        header,
+        main,
+        footer {
+            max-width: 1100px;
+            margin: auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 3px solid var(--primary);
+        }
+
+        header h1 {
+            margin-bottom: 0.3rem;
+            font-size: 2.6rem;
+            color: var(--primary);
+        }
+
+        header p {
+            margin: 0.3rem 0;
+            color: var(--text-soft);
+        }
+
+        section {
+            margin-top: 3rem;
+        }
+
+        section>h2 {
+            border-left: 6px solid var(--secondary);
+            padding-left: 1rem;
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        article {
+            background: var(--bg-card);
+            border: 1px solid var(--border-soft);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease;
+        }
+
+        article:hover {
+            transform: translateY(-4px);
+        }
+
+        article h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .meta {
+            font-size: 0.95rem;
+            color: var(--text-soft);
+            margin-bottom: 0.8rem;
+        }
+
+        .outcomes {
+            margin-top: 0.8rem;
+            padding-left: 1.2rem;
+        }
+
+        .outcomes li {
+            margin-bottom: 0.4rem;
+        }
+
+        .decision-tree {
+            background: linear-gradient(to right, #e3f2fd, #f1f8e9);
+            border-radius: 14px;
+            padding: 2rem;
+            border: 1px dashed var(--secondary);
+        }
+
+        .decision-tree ol {
+            padding-left: 1.2rem;
+        }
+
+        footer {
+            border-top: 2px solid var(--border-soft);
+            margin-top: 4rem;
+            text-align: center;
+            font-size: 0.95rem;
+            color: var(--text-soft);
+        }
+
+        footer address {
+            font-style: normal;
+            margin-bottom: 1rem;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            article {
+                box-shadow: none;
+                break-inside: avoid;
+            }
+
+            header,
+            footer {
+                border: none;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            article {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <p>Founder · Senior Educator · Engineering Mentor</p>
+        <h1>Anish Sir Classes</h1>
+        <p>Structured Academic & Technical Education Pathways (2026)</p>
+        <p>Learn Deeply · Build Independently · Grow Continuously</p>
+    </header>
+
+    <main>
+
+        <!-- SCHOOL CHAMBER -->
+        <section>
+            <h2>School Foundation Chamber (Grades 9–12)</h2>
+
+            <article>
+                <h3>Foundation Chemistry (CBSE)</h3>
+                <p class="meta">Target: Class 9–10 · Duration: 1 Academic Year</p>
+                <p>Conceptual clarity in atomic structure, bonding, reactions, and scientific thinking.</p>
+                <ul class="outcomes">
+                    <li>Strong base for Class 11 chemistry</li>
+                    <li>Logical problem-solving ability</li>
+                    <li>Exam confidence and conceptual accuracy</li>
+                </ul>
+            </article>
+
+            <article>
+                <h3>Senior Secondary Chemistry (CBSE)</h3>
+                <p class="meta">Target: Class 11–12 · Duration: 2 Academic Years</p>
+                <p>Organic, inorganic, and physical chemistry taught with depth and structure.</p>
+                <ul class="outcomes">
+                    <li>Board and competitive readiness</li>
+                    <li>Reaction mechanism understanding</li>
+                    <li>Independent problem-solving skills</li>
+                </ul>
+            </article>
+
+            <article>
+                <h3>Foundation Mathematics</h3>
+                <p class="meta">Target: Class 9–12 · Duration: Progressive</p>
+                <p>Algebra, calculus, vectors, and reasoning aligned to science and engineering needs.</p>
+                <ul class="outcomes">
+                    <li>Mathematical maturity</li>
+                    <li>Engineering readiness</li>
+                    <li>Analytical thinking</li>
+                </ul>
+            </article>
+        </section>
+
+        <!-- COLLEGE CHAMBER -->
+        <section>
+            <h2>College & Core Computing Chamber</h2>
+
+            <article>
+                <h3>BCA & Engineering Mathematics</h3>
+                <p class="meta">Duration: 1 Semester / Bridge Course</p>
+                <p>Discrete mathematics, logic, and mathematical foundations for computing.</p>
+                <ul class="outcomes">
+                    <li>Algorithmic thinking</li>
+                    <li>Strong base for data structures</li>
+                </ul>
+            </article>
+
+            <article>
+                <h3>Core Programming Languages</h3>
+                <p class="meta">C · C++ · C# · Duration: 6–9 Months</p>
+                <p>Memory, data structures, OOP, and system-level clarity.</p>
+                <ul class="outcomes">
+                    <li>Language-independent problem solving</li>
+                    <li>Solid OOP fundamentals</li>
+                </ul>
+            </article>
+        </section>
+
+        <!-- SOFTWARE CHAMBER -->
+        <section>
+            <h2>Backend, Frontend & Full-Stack Chamber</h2>
+
+            <article>
+                <h3>Backend Engineering</h3>
+                <p class="meta">Java · Python · PHP · Duration: 9–12 Months</p>
+                <p>Server-side logic, databases, clean architecture, and security basics.</p>
+                <ul class="outcomes">
+                    <li>Production-ready backend skills</li>
+                    <li>Database-driven applications</li>
+                </ul>
+            </article>
+
+            <article>
+                <h3>Frontend Engineering</h3>
+                <p class="meta">HTML5 · CSS3 · ECMAScript · Duration: 4–6 Months</p>
+                <p>Semantic structure, accessibility, modular styling, and DOM mastery.</p>
+                <ul class="outcomes">
+                    <li>Accessible UI engineering</li>
+                    <li>Clean and maintainable interfaces</li>
+                </ul>
+            </article>
+
+            <article>
+                <h3>Full-Stack Development</h3>
+                <p class="meta">End-to-End Systems · Duration: 6–9 Months</p>
+                <p>Frontend + backend integration with deployment mindset.</p>
+                <ul class="outcomes">
+                    <li>Complete project ownership</li>
+                    <li>Industry-ready portfolios</li>
+                </ul>
+            </article>
+        </section>
+
+        <!-- CAREER CHAMBER -->
+        <section>
+            <h2>Data, AI & Career Readiness Chamber</h2>
+
+            <article>
+                <h3>Data Science & AI Foundations</h3>
+                <p class="meta">Duration: 6 Months</p>
+                <p>Data handling, visualization, and machine learning concepts.</p>
+                <ul class="outcomes">
+                    <li>AI literacy</li>
+                    <li>Analytical mindset</li>
+                </ul>
+            </article>
+
+            <article>
+                <h3>Career & Industry Skills</h3>
+                <p class="meta">Parallel Track</p>
+                <p>Version control, documentation, communication, and portfolio building.</p>
+                <ul class="outcomes">
+                    <li>Job and internship readiness</li>
+                    <li>Professional confidence</li>
+                </ul>
+            </article>
+        </section>
+
+        <!-- ADMISSION DECISION TREE -->
+        <section>
+            <h2>Admission Decision Tree (Student → Chamber Mapping)</h2>
+
+            <div class="decision-tree">
+                <ol>
+                    <li>If student is in Class 9–10 → School Foundation Chamber</li>
+                    <li>If student is in Class 11–12 → Senior Secondary Chemistry + Mathematics</li>
+                    <li>If student is in BCA / Engineering → College & Core Computing</li>
+                    <li>If student wants software roles → Backend + Frontend → Full-Stack</li>
+                    <li>If student wants analytics / AI → Data & AI Chamber</li>
+                    <li>All students → Career & Industry Skills (mandatory)</li>
+                </ol>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <address>
+            <strong>Location:</strong> Sector-1, A-Market, Bhilai<br>
+            Landmark: Sanjay Cycle Stores
+        </address>
+
+        <p>Phone: +91 7470999920 · Hybrid (Online & Offline)</p>
+        <p>© 2026 Anish Sir Classes · 14+ Years Engineering Mentorship</p>
+    </footer>
+
+</body>
+
+</html>
