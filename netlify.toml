@@ -1,41 +1,53 @@
+# ============================================
+# NETLIFY CONFIG — STATIC EDUCATIONAL SITE (2026)
+# ============================================
+
 [build]
-publish = "."
+  publish = "."
+  command = ""
+
+# -------------------------------
+# SECURITY HEADERS (GLOBAL)
+# -------------------------------
+[[headers]]
+  for = "/*"
+
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; style-src 'self' 'unsafe-inline'; object-src 'none'; frame-ancestors 'none'"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+# -------------------------------
+# CACHE CONTROL
+# -------------------------------
+[[headers]]
+  for = "/*.html"
+
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
-for = "/*"
+  for = "/*.css"
 
-[headers.values]
-X-Frame-Options = "DENY"
-X-Content-Type-Options = "nosniff"
-Referrer-Policy = "strict-origin-when-cross-origin"
-Permissions-Policy = "camera=(), microphone=(), geolocation=()"
-X-XSS-Protection = "0"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
 
-[[headers]]
-for = "*.html"
+# -------------------------------
+# CLEAN URLS (OPTIONAL)
+# -------------------------------
+[build.processing]
+  skip_processing = false
 
-[headers.values]
-Cache-Control = "public, max-age=0, must-revalidate"
+# -------------------------------
+# DEPLOY CONTEXTS
+# -------------------------------
+[context.production]
+  environment = { SITE_ENV = "production" }
 
-[[headers]]
-for = "/css/*"
+[context.deploy-preview]
+  environment = { SITE_ENV = "preview" }
 
-[headers.values]
-Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-for = "/js/*"
-
-[headers.values]
-Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-for = "/assets/*"
-
-[headers.values]
-Cache-Control = "public, max-age=31536000, immutable"
-
-[[redirects]]
-from = "/*"
-to = "/404.html"
-status = 404
+[context.branch-deploy]
+  environment = { SITE_ENV = "staging" }
